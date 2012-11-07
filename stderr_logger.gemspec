@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = StderrLogger::VERSION
   gem.authors       = ["Guillermo A\314\201lvarez"]
   gem.email         = ["guillermo@cientifico.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Simple logger that add info debug and error to Object and always output to STDERR}
+  gem.summary       = %q{Simple logger}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
