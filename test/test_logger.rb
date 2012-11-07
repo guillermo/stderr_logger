@@ -17,16 +17,17 @@ class TestStderrLogger < Test::Unit::TestCase
   end
 
   def test_info
-    @logdev.expects(:write).with("Jan  1 23:23:00 el_programa INFO : hola")
+    @logdev.expects(:write).with("Jan  1 23:23:00 el_programa INFO : hola\n")
     info "hola"
   end
   def test_error
-    @logdev.expects(:write).with("Jan  1 23:23:00 el_programa ERROR : hola")
+    @logdev.expects(:write).with("Jan  1 23:23:00 el_programa ERROR : hola\n")
     error "hola"
   end
+
   def test_debug
-    @logdev.expects(:write).with("Jan  1 23:23:00 el_programa DEBUG : hola")
-    info "hola"
+    @logdev.expects(:write).with("Jan  1 23:23:00 el_programa DEBUG : hola\n")
+    debug "hola"
   end
 
 end

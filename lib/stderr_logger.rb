@@ -17,12 +17,12 @@ module StderrLogger
       if USE_COLOR
         self.formatter = proc { |severity, datetime, progname, msg|
           time = datetime.strftime("%b %e %H:%M:%S")
-          "#{time} #{File.basename($0)} : #{colorize(msg, SEVERITY_TO_COLOR[severity])}"
+          "#{time} #{File.basename($0)} : #{colorize(msg, SEVERITY_TO_COLOR[severity])}\n"
         }
       else
         self.formatter = proc { |severity, datetime, progname, msg|
           time = datetime.strftime("%b %e %H:%M:%S")
-          "#{time} #{File.basename($0)} #{severity} : #{msg}"
+          "#{time} #{File.basename($0)} #{severity} : #{msg}\n"
         }
       end
     end
@@ -41,6 +41,6 @@ class Object
     StderrLogger.logger.info(*args)
   end
   def error(*args)
-    StderrLogger.logger.info(*args)
+    StderrLogger.logger.error(*args)
   end
 end
